@@ -15,8 +15,12 @@
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Category</th>
                         <th>Name</th>
-                        <th>Description</th>
+            
+        
+                      
+                        <th>Selling Price</th>
                         <th>Image</th>
                         <th>Action</th>    
                     </tr>
@@ -30,7 +34,9 @@
                                 {{ $product->id}}
                             </td>
                       
-
+                                    <td>
+                                        {{ $product->category->name }}
+                                    </td>
                          
                             <td>
                                 {{ $product->name}}
@@ -39,7 +45,7 @@
 
                         
                             <td>
-                                {{ $product->description}}
+                                {{ $product->selling_price}}
                             </td>
                     
 
@@ -52,10 +58,10 @@
                             
                             <td>
                                 <div class="d-flex">
-                              <a href="{{url('edit-prod/'.$product->id)}}" class="btn btn-warning">
+                              <a href="{{url('edit-products/'.$product->id)}}" class="btn btn-warning">
                               <i class="material-icons">edit</i>
 </a>                                </a>
-                              <a href="{{ url('delete-category/'.$product->id) }}" class="btn btn-danger ">
+                              <a href="{{ url('delete-products/'.$product->id) }}" class="btn btn-danger ">
                               <i class="material-icons">delete</i>
 </a>                </a>
                             </div>

@@ -45,5 +45,6 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('/products', [\App\Http\Controllers\Admin\ProductController::class, 'index']);
     Route::get('/add-products', [\App\Http\Controllers\Admin\ProductController::class, 'add']);
     Route::post('/insert-product', [\App\Http\Controllers\Admin\ProductController::class, 'insert']);
-    
-});
+    Route::get('/edit-products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'edit']);
+    Route::put('/update-products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'update']);
+}); Route::get('/delete-products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy']);
