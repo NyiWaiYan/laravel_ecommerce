@@ -62,7 +62,7 @@
                         </textarea>
                     </div>
                         @if ($category->image)
-                        <img src="{{asset('ast/uploads/category/'.$category->image)}}" width="200px" height="200px" alt="Category Image">
+                        <img src="{{asset('ast/uploads/category/'.$category->image)}}"  class="cate-image2" alt="Category Image">
                                                                     
                   
 
