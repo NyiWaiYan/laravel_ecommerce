@@ -51,28 +51,24 @@
             <h2 class="text-center mb-3 "> Trending Category</h2>
             <div class="owl-carousel featured-carousel owl-theme">
   
-    @foreach ($trending_categories as $catg )
-    <div class="item">
-                
-                    <div class="card">
-                        <img src="{{asset('ast/uploads/category/'.$catg->image)}}" width="250px" height="350px" alt="Product Image">
-                        <div class="card-body">
-                            <h5>
-                                {{ $catg->name}}
-                            </h5>
-                           
-
-                          
-                        </div>
+    @foreach ($trending_categories as $cate )
+        <div class="item">
+                            <a href="{{url('view-category/'.$cate->slug)}}" style="text-decoration:none; color:black"; >
+                        <div class="card">
+                            <img src="{{asset('ast/uploads/category/'.$cate->image)}}" width="250px" height="350px" alt="Product Image">
+                            <div class="card-body">
+                                    <h5>
+                                    {{ $cate->name}}
+                                    </h5>  
+                                </div>
+                            </div>
+                        </a>
                     </div>
+    @endforeach
                 </div>
-                @endforeach
-                    </div>
-
-
+                </div>
             </div>
         </div>
-</div>
 
 @endsection
 

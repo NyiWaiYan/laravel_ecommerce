@@ -14,6 +14,9 @@
            <div class="row">
             @foreach ($category as $cate)
             <div class="col-md-3 mb-3">
+                
+                <a href="{{url('view-category/'.$cate->slug)}}" style="text-decoration:none; color:black">
+
                 <div class="card">
                         <img src="{{asset('ast/uploads/category/'.$cate->image)}}" height="250px" alt="Product Image">
                         <div class="card-body">
@@ -25,6 +28,7 @@
                            </p>
                         </div>
                     </div>
+                    </a>
                 </div>
             @endforeach
         </div>
