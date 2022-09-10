@@ -16,7 +16,6 @@ class FrontendController extends Controller
 
     }
 
-
     public function category(){
         $category=Category::where('status','0')->get();
         return view('frontend.category',compact('category'));
@@ -32,6 +31,33 @@ class FrontendController extends Controller
         }else{
             return redirect('/')->with('status',"Can't find category");
         }
+
+    }
+
+
+
+
+    
+    public function showproduct($cate_slug,$prod_slug)
+    {
+
+        if(Category::where('slug',$cate_slug)->exists()){
+            if(Product::where('slug',$prod_slug)->exists())
+            {
+                $product=Product::where('slug',$prod_slug)->first();
+
+                return view('frontend.products.show',compact('product'));
+
+            }
+                else
+            {
+                return redirect('/')->with('status','This product link is broken');
+            }
+        }else{
+            return redirect('/')->with('status','Category does not exist');
+        }
+
+
 
     }
 }

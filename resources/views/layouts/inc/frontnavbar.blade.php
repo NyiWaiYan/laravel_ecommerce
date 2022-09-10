@@ -12,8 +12,45 @@
         <li class="nav-item">
           <a class="nav-link" href="{{url('category')}}">Category</a>
         </li>
-        
-      
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('cart')}}">Cart</a>
+        </li>
+        @guest
+        @if(Route::has('login'))
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('login')}}">LogIn</a>
+        </li>
+        @endif
+
+        @if(Route::has('register'))
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('register')}}">Register</a>
+        </li>
+        @endif
+
+        @else
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="#">
+            {{ Auth::user()->name }}
+          </a>
+
+          <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                </form>
+            
+            </a>
+
+
+
+
+
+        </li>
+        @endguest
       </ul>
     </div>
   </div>

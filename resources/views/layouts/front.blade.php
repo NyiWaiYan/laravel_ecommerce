@@ -23,14 +23,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     
+    
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="{{ asset('assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <!--  font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- <link href="{{ asset('assets/js/bootstrap.min.js') }}" rel="stylesheet">
     <link href="{{ asset('assets/js/bootstrap.bundle.min.js') }}" rel="stylesheet"> -->
 
 </head>
+
 <body>
 
 
@@ -45,6 +54,8 @@
       
 
         <div class="content">
+            
+
             @yield('content')
         </div>
 
@@ -67,6 +78,7 @@
 <script src="{{ asset('assets/frontend/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/custom.js') }}"></script>
 
 
 
