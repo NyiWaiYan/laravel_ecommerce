@@ -17,8 +17,9 @@
   
     @foreach ($featured_products as $product )
     <div class="item">
-                
+    
                     <div class="card">
+                    <a href="{{url('category/'.$product->category->name.'/'.$product->slug)}}" class="text-decoration-none text-dark">
                         <img src="{{asset('ast/uploads/products/'.$product->image)}}" width="250px" height="350px" alt="Product Image">
                         <div class="card-body">
                             <h5>
@@ -33,8 +34,11 @@
                                
                             </span>
                         </div>
+                    </a>
                     </div>
+                    
                 </div>
+
                 @endforeach
                     </div>
 
@@ -70,6 +74,11 @@
             </div>
         </div>
 
+
+
+
+        
+        
 @endsection
 
 

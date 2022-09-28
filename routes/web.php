@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\CheckoutController;
+use App\Http\Controllers\frontend\UserController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\SupplierdetailController;
 use Illuminate\Routing\RouteGroup;
 
 /*use
@@ -46,6 +50,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cart',[CartController::class,'viewCart']);
     Route::get('/checkout',[CheckoutController::class,'index']);
     Route::post('place-order',[CheckoutController::class,'placeorder']);
+    Route::get('/my-orders',[UserController::class,'index']);
+    Route::get('/view-orders/{id}',[UserController::class,'view']);
     
 });
 
@@ -69,5 +75,19 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('/edit-products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'edit']);
     Route::put('/update-products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'update']);
     Route::get('/delete-products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy']);
-   
+    //  Route::get('/view-product/{product_slug}',[ProductController::class,'viewproduct']);
+
+     Route::get('/orders',[OrderController::class,'index']);
+     Route::get('/admin/view-orders/{id}',[OrderController::class,'view']);
+     Route::put('/update-order/{id}',[OrderController::class,'update']);
+     Route::get('/order-history',[OrderController::class,'orderhistory']);
+
+
+     //supplier routes
+    Route::get('/suppliers',[SupplierdetailController::class,'index']);
+     Route::get('/add-supplier',[SupplierdetailController::class,'create']);
+     Route::post('/insert-supplier',[SupplierdetailController::class,'store']);
+     Route::get('/edit-suppliers/{id}',[SupplierdetailController::class,'edit']);
+     Route::put('/update-suppliers/{id}',[SupplierdetailController::class,'update']);
+     Route::get('/delete-suppliers/{id}',[SupplierdetailController::class,'destroy']);
 });

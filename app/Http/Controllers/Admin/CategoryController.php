@@ -70,6 +70,7 @@ class CategoryController extends Controller
             $file->move('ast/uploads/category',$filename);
             $category->image =$filename;
         }
+
         $category->name=$request->input('name');
         $category->slug=$request->input('slug');
         $category->description=$request->input('description');
@@ -97,4 +98,7 @@ public function destroy($id){
 $category->delete();
 return redirect('categories')->with('status',"Category Deleted Successfully");
 }
+
+
+
 }

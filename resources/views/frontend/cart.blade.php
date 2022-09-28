@@ -4,11 +4,13 @@
 My Cart
 @endsection
     
+@include('layouts.inc.frontnavbar')
 @section('content')
 
 
     <div class="container my-5">
         <div class="card shadow ">
+            
             <div class="card-body">
 
             @php
@@ -34,7 +36,7 @@ My Cart
                     <input type="hidden" name="" class="prod_id" value="{{$item->prod_id}}">
 
 
-            @if ($item->products->qty > $item->prod_qty)
+            @if ($item->products->qty >= $item->prod_qty)
             <label for="Quantity"></label>
                  <div class="input-group text-center mb-3" style="width:130px;">
                     <button class="input-group-text changeQuantity decrement-btn">-</button>
@@ -65,6 +67,8 @@ My Cart
                     Total Price :{{ $total }} MMK
                     <a href="{{url('checkout')}}" class="btn btn-outline-success float-end">Proceed to Checkout</a>
                 </h6>
+            
+                 
             
             </div> 
         </div>

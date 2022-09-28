@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->string('fname');
             $table->string('lname');
             $table->string('email');
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
+            $table->string('total_price');
             $table->string('pincode');
             $table->tinyInteger('status')->default('0');
             $table->string('message')->nullable();

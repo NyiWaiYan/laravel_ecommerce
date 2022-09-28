@@ -5,7 +5,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="#" class="simple-text logo-normal">
-          <span style="color:yellowgreen; font-size:2rem; letter-spacing:10px;">NwY</span>
+          <span style="color:yellowgreen; font-size:2rem; letter-spacing:10px;">FURN</span>
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -42,13 +42,26 @@
           </li>
 
 
-          <li class="nav-item  ">
-            <a class="nav-link" href="./tables.html">
+          <li class="nav-item {{Request::is('orders')?'active':'';}} ">
+            <a class="nav-link" href="{{url('orders')}}">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Orders</p>
             </a>
           </li>
          
+          <li class="nav-item {{Request::is('add-supplier')?'active':'';}} ">
+            <a class="nav-link" href="{{url('add-supplier')}}">
+              <i class="material-icons">add</i>
+              <p>Add Supplier</p>
+            </a>
+          </li>
+
+          <li class="nav-item {{Request::is('suppliers')?'active':'';}} ">
+            <a class="nav-link" href="{{url('suppliers')}}">
+              <i class="material-icons">shop</i>
+              <p>Supplier</p>
+            </a>
+          </li>
          
          
         </ul>
